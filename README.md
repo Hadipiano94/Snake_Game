@@ -2,4 +2,4 @@
 Classic Nokia snake game exe included
 
 
-<img src="result.PNG" width=400 height=400/>
+<img src="result.PNG" width=550 height=500/>
