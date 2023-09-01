@@ -112,12 +112,12 @@ while repeat_game:
     score = 0
     high_score = 0
 
-    with open("venv/high_score.txt", mode="r") as file:
+    with open("high_score.txt", mode="r") as file:
         contents = file.read()
         if contents == "":
             pass
         else:
-            high_score = int(contents.strip().split()[1])
+            high_score = int(contents)
     print(high_score)
     make_dot(screen_width, screen_heigth)
     screen.update()
@@ -127,7 +127,7 @@ while repeat_game:
 
         """updating the text, moving the snake, 0.15 sec between each slide"""
         text_maker.clear()
-        text_maker.write(f"Score: {score}  High Score: {high_score}", False, "center", ('Arial', 12, 'normal'))
+        text_maker.write(f"Score: {score}  Highest Score: {high_score}", False, "center", ('Arial', 12, 'normal'))
         time.sleep(0.15)
         snake.move()
         screen.update()
@@ -164,8 +164,8 @@ while repeat_game:
         text_maker.write(f"Your Score: {score}\n High score: {high_score}", False, "center", ('Arial', 14, 'normal'))
         if score > high_score:
             high_score = score
-        with open("venv/high_score.txt", mode="w") as file:
-            file.write(f"high_score: {high_score}")
+        with open("high_score.txt", mode="w") as file:
+            file.write(f"{high_score}")
         # text_maker.goto(0, -70)
         # text_maker.write(f"R for  reset\nE for  exit", False, "center", ('Arial', 10, 'normal'))
 
